@@ -24,7 +24,7 @@ class StartController extends Controller {
         ]);
     }
     /**
-     * Prepear transctions data 
+     * Prepare transctions data 
      * @param array $goldPriseHistory
      * @return array
      */
@@ -54,7 +54,7 @@ class StartController extends Controller {
         return $transactionDiary;
     }
     /**
-     * Finding best moments to sell and buy gold
+     * Find best moments to sell and buy gold
      * @param array $prices
      * @return array
      */
@@ -122,7 +122,7 @@ class StartController extends Controller {
     }
     
     /**
-     * Get date for start of analyse
+     * Get date for start of analyze
      * @param int $years
      * @return date
      */
@@ -131,7 +131,7 @@ class StartController extends Controller {
     }
     
     /**
-     * Merging data from API
+     * Merge data from API
      * @param int $years
      * @return array
      */
