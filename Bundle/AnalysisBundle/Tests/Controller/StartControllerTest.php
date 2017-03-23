@@ -8,15 +8,6 @@ use PHPUnit\Framework\TestCase;
 
 class StartControllerTest extends TestCase
 {
-    /*public function testGetDateAction()
-    {
-        $analizer = new StartController();
-        $result = $analizer->makeGreateExchanges(1);
-
-        // assert that your calculator added the numbers correctly!
-        //$this->assertEquals(42, $result);
-    }*/
-    
     public function testCallNbpApi()
     {
         $datesPeriod['start'] = '2017-02-20'; 

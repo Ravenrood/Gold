@@ -78,9 +78,9 @@ class StartController extends Controller {
         }
         $organizedTransactionDates = $this->organizeTransactionDates($transactionDates);
         
-
         return $organizedTransactionDates;
     }
+    
     /**
      * Removes the extrems causing transaction problems
      * @param type $transactionDates
@@ -92,31 +92,26 @@ class StartController extends Controller {
         while ($modify) {
             $i = 0;
             $modify = false;
-            foreach ($transactionDates as $date => $price) {
+            foreach ($transactionDates as $price) {
                 if ((0 == $i%2)) {
-                    //kupuj
-                    //echo $i . ' ';
+                    //buy
                     if ($transactionDates[$dates[$i + 1]] <= $price) {
                         unset($transactionDates[$dates[$i + 1]]);
                         unset($dates[$i + 1]);
                         $dates = array_values($dates);
                         $modify = true;
-                        //echo 'break ';
                         break;
                     }
                 } else {
-                    //sprzedaj
-                    //echo $i . ' ';
+                    //sell
                     if ($transactionDates[$dates[$i - 1]] >= $price) {
                         unset($transactionDates[$dates[$i - 1]]);
                         unset($dates[$i - 1]);
                         $dates = array_values($dates);
                         $modify = true;
-                        //echo 'break ';
                         break;
                     }
                 }
-                
                 $i++;
             }
             if ($i == count($transactionDates)-1) {
@@ -186,5 +181,4 @@ class StartController extends Controller {
         curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
         return curl_exec($ch);
     }
-
 }
