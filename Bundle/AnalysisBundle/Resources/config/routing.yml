@@ -1,0 +1,6 @@
+gold_analysis_homepage:
+    path:     /gold
+    defaults: { _controller: GoldAnalysisBundle:Default:index }
+gold_analysis_start:
+    path:     /gold/start/{years}
+    defaults: { _controller: GoldAnalysisBundle:Start:analyze }

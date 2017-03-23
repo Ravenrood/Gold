@@ -1,0 +1,16 @@
+<script src="/assets/vendor/moment/min/moment.min.js"></script>
+<script src="/assets/vendor/chart.js/src/charts/Chart.Line.js"></script>
+<script>
+    var myChart = new Chart({...})
+</script>
+{% for transaction in transactions %}
+    <div>
+    <p>transaction date: {{ transaction.date }}</p>
+    <p>transaction type: {{ transaction.operationType }}</p>
+    <p>transaction gold Prise: {{ transaction.goldPrice }}</p>
+    <p>transaction gold Amount: {{ transaction.goldAmount }}</p>
+    <p>transaction maney: {{ transaction.moneyAmount }}</p>
+    <p>money earned: {{ transaction.earnd }}</p>
+    <p>------------------------------------</p>
+    </div>
+{% endfor %}
